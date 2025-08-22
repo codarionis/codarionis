@@ -1,0 +1,28 @@
+name: Deploy Rosary Site
+
+on:
+  workflow_dispatch: # allows manual trigger
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout source repo
+        uses: actions/checkout@v3
+        with:
+          repository: blazexnz/blazexnz.github.io  # source repo
+          token: ${{ secrets.GITHUB_TOKEN }}
+          path: source
+
+      - name: Copy rosary files to root
+        run: |
+          cp -r source/rosary/* .
+
+      - name: Commit and push to GitHub Pages
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          git add .
+          git commit -m "Deploy rosary from blazexnz" || echo "No changes to commit"
+          git push origin main
