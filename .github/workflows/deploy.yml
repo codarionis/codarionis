@@ -15,14 +15,26 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           path: source
 
+      - name: List contents of source repo
+        run: |
+          echo "Contents of source repo root:"
+          ls -la source
+          echo "Contents of rosary folder:"
+          ls -la source/rosary
+
       - name: Copy rosary files to root
         run: |
           cp -r source/rosary/* .
+
+      - name: List contents of deployment repo after copy
+        run: |
+          echo "Contents of deployment repo root after copy:"
+          ls -la
 
       - name: Commit and push to GitHub Pages
         run: |
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
           git add .
-          git commit -m "Deploy rosary from blazexnz" || echo "No changes to commit"
+          git commit -m "Deploy rosary from username1" || echo "No changes to commit"
           git push origin main
