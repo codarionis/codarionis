@@ -1,7 +1,7 @@
 name: Deploy Rosary Site
 
 on:
-  workflow_dispatch: # allows manual trigger
+  workflow_dispatch:  # manual trigger
 
 jobs:
   deploy:
@@ -9,37 +9,18 @@ jobs:
 
     steps:
       # Checkout the source repo
-      - name: Checkout source repo
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v3
         with:
           repository: blazexnz/blazexnz.github.io
-          token: ${{ secrets.GITHUB_TOKEN }}
           path: source
 
-      # List files for debugging
-      - name: List source files
-        run: |
-          echo "Contents of source repo root:"
-          ls -la source
-          echo "Contents of rosary folder:"
-          ls -la source/rosary
+      # Copy rosary folder files to root
+      - run: cp -r source/rosary/* .
 
-      # Copy rosary files to deployment repo root
-      - name: Copy rosary files
-        run: |
-          cp -r source/rosary/* .
-
-      # List deployment repo files after copy
-      - name: List deployment files
-        run: |
-          echo "Contents of deployment repo root after copy:"
-          ls -la
-
-      # Commit and push only if there are changes
-      - name: Commit and push
-        run: |
+      # Commit and push changes
+      - run: |
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
           git add .
-          git diff --cached --quiet || git commit -m "Deploy rosary from blazexnz"
+          git commit -m "Deploy rosary from source" || echo "No changes to commit"
           git push origin main
