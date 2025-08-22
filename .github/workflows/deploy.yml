@@ -8,33 +8,38 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      # Checkout the source repo
       - name: Checkout source repo
         uses: actions/checkout@v3
         with:
-          repository: blazexnz/blazexnz.github.io  # source repo
+          repository: https://github.com/blazexnz/blazexnz.github.io.git  # source repo
           token: ${{ secrets.GITHUB_TOKEN }}
           path: source
 
-      - name: List contents of source repo
+      # List files for debugging
+      - name: List source files
         run: |
           echo "Contents of source repo root:"
           ls -la source
           echo "Contents of rosary folder:"
           ls -la source/rosary
 
-      - name: Copy rosary files to root
+      # Copy rosary files to deployment repo root
+      - name: Copy rosary files
         run: |
           cp -r source/rosary/* .
 
-      - name: List contents of deployment repo after copy
+      # List deployment repo files after copy
+      - name: List deployment files
         run: |
           echo "Contents of deployment repo root after copy:"
           ls -la
 
-      - name: Commit and push to GitHub Pages
+      # Commit and push only if there are changes
+      - name: Commit and push
         run: |
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
           git add .
-          git commit -m "Deploy rosary from username1" || echo "No changes to commit"
+          git diff --cached --quiet || git commit -m "Deploy rosary from blazexnz"
           git push origin main
