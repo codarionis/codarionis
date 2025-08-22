@@ -12,7 +12,7 @@ jobs:
       - name: Checkout source repo
         uses: actions/checkout@v3
         with:
-          repository: https://github.com/blazexnz/blazexnz.github.io.git  # source repo
+          repository: blazexnz/username1.github.io
           token: ${{ secrets.GITHUB_TOKEN }}
           path: source
 
