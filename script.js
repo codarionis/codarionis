@@ -205,8 +205,7 @@ through the same Christ our Lord. Amen.`,
   concludingPrayerForTheDeceased: `Lord, in Your mercy, hear our prayer for the soul of (name). May (he/she) rest in Your peace and rise with You in glory. Amen.`,
 
 //New prayers added for the one decade mode
-  yourIntention: `State your personal intention for this rosary.`,
-
+  yourIntention: `State your personal intention for this rosary.`
 },
 
 vi: {
@@ -236,7 +235,7 @@ Tôi tin kính Ðức Chúa Thánh Thần. Tôi tin có hội thánh hằng có 
 Qua cuộc sống, cái chết và sự phục sinh để chuộc tội cho chúng con;  
 Xin cho chúng con nhờ suy niệm các mầu nhiệm Mân Côi của Mẹ Maria,  
 Bắt chước những gì chúng chứa đựng và được hưởng những lời hứa,  
-Nhờ chính Đức Kitô, Chúa chúng con. Amen.`,
+Nhờ chính Đức Kitô, Chúa chúng con. Amen.`
 },
 tl: {
   signOfTheCross: `Sa ngalan ng Ama, at ng Anak, at ng Espiritu Santo. Amen.`,
@@ -299,7 +298,65 @@ ng Mahal na Birheng Maria,
 ay maisabuhay namin ang mga nilalaman nito  
 at matamo ang mga ipinangako nito.  
 Sa pamamagitan ni Hesukristo, aming Panginoon. Amen.`
-  }
+  },
+la: {
+  signOfTheCross: `In nómine Patris, et Fílii, et Spíritus Sancti. Amen.`,
+
+  apostlesCreed: `Credo in Deum Patrem omnipoténtem, Creatórem cæli et terræ.
+Et in Iesum Christum, Fílium eius únicum, Dóminum nostrum,
+qui concéptus est de Spíritu Sancto, natus ex María Vírgine,
+passus sub Póntio Piláto, crucifíxus, mórtuus, et sepúltus,
+descéndit ad ínferos, tértia die resurréxit a mórtuis,
+ascéndit ad cælos, sedet ad déxteram Dei Patris omnipoténtis,
+inde ventúrus est iudicáre vivos et mórtuos.
+Credo in Spíritum Sanctum, sanctam Ecclésiam cathólicam,
+sanctórum communiónem, remissiónem peccatórum,
+cárnis resurrectiónem, vitam ætérnam. Amen.`,
+
+  ourFather: `<strong>V.</strong> Pater noster, qui es in cælis:
+sanctificétur nomen tuum;
+advéniat regnum tuum;
+fiat volúntas tua, sicut in cælo et in terra.<br>
+<strong>R.</strong> Panem nostrum cotidiánum da nobis hódie;
+et dimítte nobis débita nostra, sicut et nos dimíttimus debitóribus nostris;
+et ne nos indúcas in tentatiónem;
+sed líbera nos a malo. Amen.`,
+
+  hailMary: `<strong>V.</strong> Ave María, grátia plena, Dóminus tecum;
+benedícta tu in muliéribus, et benedíctus fructus ventris tui, Iesus.<br>
+<strong>R.</strong> Sancta María, Mater Dei, ora pro nobis peccatóribus,
+nunc et in hora mortis nostræ. Amen.`,
+
+  gloryBe: `<strong>V.</strong> Glória Patri, et Fílio, et Spirítui Sancto,<br>
+<strong>R.</strong> sicut erat in princípio, et nunc, et semper,
+et in sǽcula sæculórum. Amen.`,
+
+  fatima: `O mi Iesu, dimítte nobis peccáta nostra,
+líbera nos ab igne inférni,
+conduc in cælum omnes ánimas,
+præsertim eas, quæ misericórdiæ tuæ máxime índigent.`,
+
+  hailHolyQueen: `Salve, Regína, mater misericórdiæ;
+vita, dulcédo, et spes nostra, salve.
+Ad te clamámus, éxsules fílii Hevæ.
+Ad te suspirámus, geméntes et flentes
+in hac lacrimárum valle.
+Eia ergo, advocáta nostra,
+illos tuos misericórdes óculos ad nos convérte.
+Et Iesum, benedíctum fructum ventris tui,
+nobis post hoc exsílium osténde.
+O clemens, o pia, o dulcis Virgo María.`,
+
+  closingDialogue: `<strong>V.</strong> Ora pro nobis, sancta Dei Génitrix.<br>
+<strong>R.</strong> Ut digni efficiámur promissiónibus Christi.`,
+
+  closingPrayer: `Oremus:
+Deus, cuius unigenitus Fílius, vita, morte et resurrectióne sua,
+redemit nobis praemia vitae aeternae;
+te petímus, ut, meditando in his Mysteriis Sanctissimi Rosarii Beatae Mariae Virginis,
+imitári possímus ea quae continentur et adipisci quae promittunt,
+per eundem Christum Dominum nostrum. Amen.`
+}
 };
 
 
@@ -335,7 +392,6 @@ const titles = {
     hailHolyQueen: "Kinh Kính Mừng Nữ Vương",
     closingDialogue: "Đoạn Kết",
     closingPrayer: "Kinh Cầu Kết",
-    signOfTheCross: "Dấu Thánh Giá"
   },
   tl: {
     signOfTheCross: "Tanda ng Krus",
@@ -349,7 +405,19 @@ const titles = {
     hailHolyQueen: "Aba Po, Santa Mariang Hari",
     closingDialogue: "Panalangin sa Wakas",
     closingPrayer: "Pangwakas na Panalangin",
-    signOfTheCross: "Tanda ng Krus"
+  },
+  la: {
+    signOfTheCross: "Signum Crucis",
+    apostlesCreed: "Symbolum Apostolorum",
+    ourFather: "Pater Noster",
+    threeHailMarys: "Tres Ave Mariae (Fides, Spes et Caritas)",
+    gloryBe: "Gloria Patri",
+    mystery: "Mysterium",
+    tenHailMarys: "Ave Maria",
+    fatimaPrayer: "Fatimæ Oratio",
+    hailHolyQueen: "Salve Regina",
+    closingDialogue: "Dialogus Conclusivus",
+    closingPrayer: "Oratio Conclusiva"
   }
 };
 
@@ -381,6 +449,12 @@ const mysteryCategories = {
     Sorrowful: "Misteryong Malungkot",
     Glorious: "Misteryong Maluwalhati",
     Luminous: "Misteryong Liwanag"
+  },
+  la: {
+    Joyful: "Mysteria Gaudiosa",
+    Sorrowful: "Mysteria Dolorosa",
+    Glorious: "Mysteria Gloriosa",
+    Luminous: "Mysteria Luminosa"
   }
 };
 
@@ -774,7 +848,141 @@ Sorrowful: [
         fruit: "Bunga ng Misteryo: Pagsamba"
       }
     ]
-  }
+  },
+
+la: {
+  Joyful: [
+    {
+      title: "Annuntiatio B. Mariae Virginis",
+      scripture: "“Ecce concípies in útero et páries fílium.” — Lucae 1:31",
+      reflection: "Gabriel nuntiat Mariæ incarnationem Filii Dei. Oramus pro humilitate et parata ad serviendum Deo.",
+      fruit: "Fructus Mystérii: Humilitas"
+    },
+    {
+      title: "Visitatio Mariae ad Elisabeth",
+      scripture: "“Exsultavit infans in utero eius.” — Lucae 1:41",
+      reflection: "Maria visitat Elisabeth, et Ioannes exsultat. Oramus pro caritate fraterna.",
+      fruit: "Fructus Mystérii: Caritas fraterna"
+    },
+    {
+      title: "Nativitas Domini",
+      scripture: "“Et peperit filium suum primogénitum.” — Lucae 2:7",
+      reflection: "Iesus nascitur in Bethlehem. Oramus pro paupertate spirituali.",
+      fruit: "Fructus Mystérii: Paupertas spiritualis"
+    },
+    {
+      title: "Praesentatio Iesu in Templo",
+      scripture: "“Portaverunt illum in Ierusalem, ut sisterent eum Domino.” — Lucae 2:22",
+      reflection: "Maria et Ioseph offerunt Iesum in templo. Oramus pro obedientia et puritate.",
+      fruit: "Fructus Mystérii: Obedientia et puritas"
+    },
+    {
+      title: "Inventio Iesu in Templo",
+      scripture: "“Invenérunt illum in templo, sedentem in medio doctorum.” — Lucae 2:46",
+      reflection: "Post triduum Maria et Ioseph Iesum reperiunt. Oramus pro sapientia.",
+      fruit: "Fructus Mystérii: Sapientia"
+    }
+  ],
+  
+  Luminous: [
+    {
+      title: "Baptismus Iesu in Iordane",
+      scripture: "“Baptizatus autem Iesus, confestim ascendit de aqua.” — Matthaei 3:16",
+      reflection: "Iesus ministerium publicum incipit. Oramus pro apertura Spiritui Sancto.",
+      fruit: "Fructus Mystérii: Apertura Spiritui Sancto"
+    },
+    {
+      title: "Manifestatio apud Canense nuptias",
+      scripture: "“Hoc fecit initium signorum Iesus in Cana Galilaeae.” — Ioannis 2:11",
+      reflection: "Iesus primum miraculum facit in Cana. Oramus pro fiducia in Mariam intercedentem.",
+      fruit: "Fructus Mystérii: Fiducia"
+    },
+    {
+      title: "Praedicatio Regni Dei",
+      scripture: "“Poenitemini, appropinquavit enim regnum caelorum.” — Matthaei 4:17",
+      reflection: "Iesus regnum Dei annuntiat. Oramus pro conversione cordis.",
+      fruit: "Fructus Mystérii: Conversio cordis"
+    },
+    {
+      title: "Transfiguratio Domini",
+      scripture: "“Transfiguratus est ante eos.” — Matthaei 17:2",
+      reflection: "Iesus divinitatem suam revelat. Oramus pro desiderio sanctitatis.",
+      fruit: "Fructus Mystérii: Desiderium sanctitatis"
+    },
+    {
+      title: "Institutio Eucharistiae",
+      scripture: "“Hoc est corpus meum, quod pro vobis traditur.” — 1 Corinthios 11:24",
+      reflection: "Iesus Eucharistiam instituit. Oramus pro devotione ad Eucharistiam.",
+      fruit: "Fructus Mystérii: Devotio Eucharistiae"
+    }
+  ],
+
+  Sorrowful: [
+    {
+      title: "Agonia in Horto",
+      scripture: "“Pater mi, si possibile est, transeat a me calix iste.” — Matthaei 26:39",
+      reflection: "Iesus in horto Gethsemani orat. Oramus pro conformitate voluntati Dei.",
+      fruit: "Fructus Mystérii: Conformatio"
+    },
+    {
+      title: "Flagellatio",
+      scripture: "“Tunc Pilatus apprehendit Iesum et flagellavit.” — Ioannis 19:1",
+      reflection: "Iesus flagellatur. Oramus pro mortificatione.",
+      fruit: "Fructus Mystérii: Mortificatio"
+    },
+    {
+      title: "Coronatio Spinis",
+      scripture: "“Et plectentes coronam de spinis imposuerunt capiti eius.” — Matthaei 27:29",
+      reflection: "Iesus spinis coronatur. Oramus pro patientia.",
+      fruit: "Fructus Mystérii: Patientia"
+    },
+    {
+      title: "Bajulatio Crucis",
+      scripture: "“Et bajulans sibi crucem exivit.” — Ioannis 19:17",
+      reflection: "Iesus crucem portat. Oramus pro fortitudine.",
+      fruit: "Fructus Mystérii: Fortitudo"
+    },
+    {
+      title: "Crucifixio et Mors Iesu",
+      scripture: "“Inclínato capite, tradidit spiritum.” — Ioannis 19:30",
+      reflection: "Iesus in cruce moritur. Oramus pro amore Dei et proximi.",
+      fruit: "Fructus Mystérii: Amor Dei et proximi"
+    }
+  ],
+
+  Glorious: [
+    {
+      title: "Resurrectio Domini",
+      scripture: "“Surrexit Dominus vere.” — Lucae 24:34",
+      reflection: "Iesus resurrexit a mortuis. Oramus pro fide.",
+      fruit: "Fructus Mystérii: Fides"
+    },
+    {
+      title: "Ascensio Domini",
+      scripture: "“Elevatus est, et nubes suscepit eum.” — Actus 1:9",
+      reflection: "Iesus in caelum ascendit. Oramus pro spe.",
+      fruit: "Fructus Mystérii: Spes"
+    },
+    {
+      title: "Adventus Spiritus Sancti",
+      scripture: "“Et repleti sunt omnes Spiritu Sancto.” — Actus 2:4",
+      reflection: "Spiritus Sanctus super Apostolos effunditur. Oramus pro sapientia et donis Spiritus Sancti.",
+      fruit: "Fructus Mystérii: Donum Spiritus Sancti"
+    },
+    {
+      title: "Assumptio Beatae Mariae Virginis",
+      scripture: "“Signum magnum apparuit in caelo: mulier amicta sole.” — Apocalypsis 12:1",
+      reflection: "Maria in caelum assumitur. Oramus pro gratia bonae mortis.",
+      fruit: "Fructus Mystérii: Gratia bonae mortis"
+    },
+    {
+      title: "Coronatio Beatae Mariae Virginis in Caelo",
+      scripture: "“Et super caput eius corona stellarum duodecim.” — Apocalypsis 12:1",
+      reflection: "Maria Regina caeli coronatur. Oramus pro devotione erga Mariam.",
+      fruit: "Fructus Mystérii: Devotio erga Mariam"
+    }
+  ]
+}
 };
 
 let currentFontSize = 28; //changed default from 16 to 28
@@ -866,7 +1074,9 @@ function renderPrayers() {
   const ordinalMap = {
     en: ["First", "Second", "Third", "Fourth", "Fifth"],
     vi: ["Thứ Nhất", "Thứ Hai", "Thứ Ba", "Thứ Tư", "Thứ Năm"],
-    tl: ["Unang", "Ikalawang", "Ikatlong", "Ikaapat", "Ikalimang"]
+    tl: ["Unang", "Ikalawang", "Ikatlong", "Ikaapat", "Ikalimang"],
+    tl: ["Unang", "Ikalawang", "Ikatlong", "Ikaapat", "Ikalimang"],
+    la: ["Primus", "Secundus", "Tertius", "Quartus", "Quintus"]
   };
 
   let html = "";
@@ -1372,4 +1582,3 @@ toggleBeadsBtn.addEventListener("click", () => {
   const beadsVisible = prayersDiv.classList.toggle("hide-beads");
   toggleBeadsBtn.textContent = beadsVisible ? "Show Beads" : "Hide Beads";
 });
-
