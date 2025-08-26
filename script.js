@@ -451,10 +451,10 @@ const mysteryCategories = {
     Luminous: "Misteryong Liwanag"
   },
   la: {
-    Joyful: "Mysteria Gaudiosa",
-    Sorrowful: "Mysteria Dolorosa",
-    Glorious: "Mysteria Gloriosa",
-    Luminous: "Mysteria Luminosa"
+    Joyful: "Gaudiosa",
+    Sorrowful: "Dolorosa",
+    Glorious: "Gloriosa",
+    Luminous: "Luminosa"
   }
 };
 
@@ -1360,6 +1360,8 @@ function renderPrayers() {
       mysteryTitle = `${mysteryCategoryName} ${ordinal}: ${meditation.title}`;
     } else if (lang === "tl") {
       mysteryTitle = `${ordinal} ${mysteryCategoryName}: ${meditation.title}`;
+    } else if (lang === "la") {
+      mysteryTitle = `${ordinal} ${mysteryCategoryName} Misterium: ${meditation.title}`;
     }
 
     html += `<div class='prayer mysteries'>
