@@ -1,6 +1,6 @@
 const prayers = {
 en: {
-  signOfTheCross: "In the name of the Father, and of the Son, and of the Holy Spirit. Amen.",
+  signOfTheCross: `In the name of the Father, and of the Son, and of the Holy Spirit. Amen.`,
 
   apostlesCreed: `<strong>V.</strong> I believe in God, the Father Almighty, Creator of heaven and earth;  
 and in Jesus Christ, His only Son, our Lord;  
@@ -210,12 +210,11 @@ through the same Christ our Lord. Amen.`,
 },
 
 vi: {
-  signOfTheCross: "Nhân danh Cha, và Con, và Thánh Thần. Amen.",
+  signOfTheCross: `Nhân danh Cha, và Con, và Thánh Thần. Amen.`,
 
   apostlesCreed: `Tôi tin kính Ðức Chúa Trời là Cha phép tắc vô cùng dựng nên trời đất. Tôi tin kính Ðức Chúa Giêsu Kitô là con một Ðức Chúa Cha cùng là Chúa chúng tôi. Bởi phép Ðức Chúa Thánh Thần mà Người xuống thai sinh bởi Bà Maria Ðồng Trinh; Chịu nạn đời quan Phong-Xi-ô Philatô, chịu đóng đanh trên cây Thánh Giá, chết và táng xác, xuống ngục tổ tông; Ngày thứ ba bởi trong kẻ chết mà sống lại lên Trời ngự bên hữu Ðức Chúa Cha phép tắc vô cùng; Ngày sau bởi trời lại xuống phán xét kẻ sống và kẻ chết.
 
-Tôi tin kính Ðức Chúa Thánh Thần. Tôi tin có hội thánh hằng có ở khắp thế này, các Thánh thông công. Tôi tin phép tha tội. Tôi tin xác loài người ngày sau sống lại. Tôi tin hằng sống vậy. Amen.
-`,
+Tôi tin kính Ðức Chúa Thánh Thần. Tôi tin có hội thánh hằng có ở khắp thế này, các Thánh thông công. Tôi tin phép tha tội. Tôi tin xác loài người ngày sau sống lại. Tôi tin hằng sống vậy. Amen.`,
 
   ourFather: `<strong>V.</strong> Lạy Cha chúng con ở trên Trời chúng con nguyện danh Cha cả sáng, nước Cha trị đến, ý cha thể hiện dưới đất cũng như trên trời.<br>
 <strong>Đ.</strong> Xin Cha cho chúng con hôm nay lương thực hằng ngày, và tha nợ chúng con, như chúng con cũng tha kẻ có nợ chúng con, xin chớ để chúng con sa chước cám dỗ, nhưng cứu chúng con cho khỏi sự dữ. Amen.`,
@@ -240,7 +239,7 @@ Bắt chước những gì chúng chứa đựng và được hưởng những l
 Nhờ chính Đức Kitô, Chúa chúng con. Amen.`,
 },
 tl: {
-  signOfTheCross: "Sa ngalan ng Ama, at ng Anak, at ng Espiritu Santo. Amen.",
+  signOfTheCross: `Sa ngalan ng Ama, at ng Anak, at ng Espiritu Santo. Amen.`,
 
   apostlesCreed: `Sumasampalataya ako sa Diyos Amang makapangyarihan sa lahat, na may gawa ng langit at lupa.  
 At kay Hesukristo, iisang Anak ng Diyos, Panginoon natin.  
