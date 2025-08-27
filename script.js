@@ -240,64 +240,46 @@ Nhờ chính Đức Kitô, Chúa chúng con. Amen.`
 tl: {
   signOfTheCross: `Sa ngalan ng Ama, at ng Anak, at ng Espiritu Santo. Amen.`,
 
-  apostlesCreed: `Sumasampalataya ako sa Diyos Amang makapangyarihan sa lahat, na may gawa ng langit at lupa.  
-At kay Hesukristo, iisang Anak ng Diyos, Panginoon natin.  
-Nagkatawang-tao Siya lalang ng Espiritu Santo, ipinanganak ni Santa Mariang Birhen.  
-Nagpakasakit Siya sa ilalim ni Poncio Pilato, ipinako sa krus, namatay at inilibing.  
-Nan descendió siya sa mga yumao, nang ikatlong araw ay muling nabuhay.  
-Umakyat siya sa langit, naluluklok sa kanan ng Diyos Amang makapangyarihan sa lahat.  
-Mula roo’y paririto Siya’t huhukom sa mga buhay at mga patay.  
-Sumasampalataya ako sa Espiritu Santo, sa banal na Simbahang Katolika,  
-sa kasamahan ng mga banal, sa kapatawaran ng mga kasalanan,  
-sa pagkabuhay na muli ng mga namatay, at sa buhay na walang hanggan. Amen.`,
+  apostlesCreed: `Sumasampalataya ako sa Diyos Amang makapanyayari sa lahat, na may gawa ng langit at lupa. Sumasampalataya naman ako kay Hesukristo, iisang Anak ng Diyos, Panginoon nating lahat. Nagkatawang-tao Siya lalang ng Espiritu Santo; ipinanganak ni Santa Mariang Birhen. Pinagpakasakit ni Ponsio Pilato; ipinako sa krus, namatay at ibinaon. Nanaog sa mga impiyerno; nang may ikatlong araw nabuhay na mag-uli. Umakyat sa langit; naluluklok sa kanan ng Diyos Amang makapangyayari sa lahat. Doon magmumula't pariritong huhukom sa nangabubuhay at nangamatay na tao. Sumasampalataya naman ako sa Diyos Espiritu Santo, na may Santa Iglesya Katolika; may kamsamahan ng mga Santo, may ikawawala ng mga kasalanan; at mabubuhay na mag uli ang nangamatay na tao, at may buhay na walang hanggan. Amen.`,
 
-  ourFather: `Ama namin, sumasalangit Ka,  
-Sambahin ang ngalan Mo.  
-Mapasaamin ang kaharian Mo.  
-Sundin ang loob Mo, dito sa lupa para nang sa langit.  
-Bigyan Mo kami ngayon ng aming kakanin sa araw-araw.  
-At patawarin Mo kami sa aming mga sala,  
-para nang pagpapatawad namin sa mga nagkakasala sa amin.  
-At huwag Mo kaming ipahintulot sa tukso,  
-kundi iligtas Mo kami sa lahat ng masama. Amen.`,
+  ourFather: `Ama namin, sumasa-langit Ka. Sambahin ang ngalan Mo.
+Mapasa amin ang Kaharian Mo.
+Sundin ang loob Mo dito sa lupa para nang sa langit.
+Bigyan Mo kami ngayon ng aming kakanin sa araw-araw.
+At patawarin Mo kami ng aming mga sala, para nang pagpapatawad
+ namin sa mg nagkakasala sa amin.
+At huwag Mo kaming ipahintulot sa tukso,
+at iadya Mo kami sa dilang masama. Amen.`,
 
-  hailMary: `Aba Ginoong Maria, napupuno ka ng grasya,  
-ang Panginoon ay sumasaiyo;  
-pinagpala ka sa babaeng lahat,  
-at pinagpala naman ang iyong anak na si Hesus.  
-Santa Maria, Ina ng Diyos,  
-ipanalangin mo kaming makasalanan,  
-ngayon at kung kami’y mamamatay. Amen.`,
+  hailMary: ` Aba Ginoong Maria, napupuno ka ng grasya,
+ang Panginoong Diyos ay sumasaiyo,
+bukod kang pinagpala sa babaeng lahat at pinagpala
+naman ang iyong Anak na si Hesus.
+Santa Maria, Ina ng Diyos,
+ ipanalangin mo kaming makasalanan,
+ ngayon at kung kami y mamamatay. Amen.`,
 
-  gloryBe: `Luwalhati sa Ama, at sa Anak, at sa Espiritu Santo,  
-gaya noong una, ngayon at magpakailanman. Amen.`,
+  gloryBe: `Luwalhati sa Ama at sa Anak at sa Espiritu Santo.
+Kapara nang sa una, gayon din ngayon at
+magpakilan pa man sa walang hanggan.
+Siya nama. Amen.`,
 
-  fatima: `O Hesus ko, patawarin Mo kami sa aming mga sala,  
-iligtas Mo kami sa apoy ng impiyerno,  
-dalhin Mo sa langit ang lahat ng kaluluwa,  
-lalo na ang mga higit na nangangailangan ng Iyong awa. Amen.`,
+  fatima: `O Hesus ko, patawarin Mo ang aming mga sala. Iligtas Mo kami sa apoy ng impiyerno.
+Hanguin Mo ang mga kaluluwa sa purgatoryo. Lalong-lalo na yaong mga walang nakakaalaala. Amen.`,
 
-  hailHolyQueen: `Aba Po, Santa Mariang Hari, Ina ng Awa,  
-buhay, tamis, at pag-asa namin, aba Ginoo.  
-Sa Iyo kami sumisigaw, mga anak ni Eva,  
-Sa Iyo kami dumaraing, humihibik sa gitna ng lupang ito ng pagluha.  
-Ibaling Mo sa amin ang Iyong mga matang maawain,  
-at pagkatapos ng pagkakait sa amin,  
-ipakita Mo sa amin si Hesus, ang mapagpalang bunga ng Iyong sinapupunan.  
-O maawain, o mahinahon, o matamis na Birheng Maria.`,
+  hailHolyQueen: `Aba Po Santa Mariang Hari, Ina ng Awa.
+Ikaw ang kabuhayan at katamisan; Aba pinananaligan ka namin.
+Ikaw nga ang tinatawagan namin, pinapanaw na taong anak ni Eva.
+Ikaw rin ang pinagbunbuntuhang hininga namin ng aming pagtangis
+dini sa lupang bayang kahapis-hapis. Ay aba, pintakasi ka namin,
+ ilingon mo sa amin, ipakita mo sa amin ang iyong Anak na si Hesus.
+Santa Maria, Ina ng Diyos, maawain, maalam at matamis na Birhen.`,
 
-  closingDialogue: `<strong>V.</strong> Ipanalangin mo kami, O Banal na Ina ng Diyos.  
-<strong>R.</strong> Nang kami’y maging karapat-dapat sa mga pangako ni Kristo.`,
+  closingDialogue: `<strong>V.</strong> Ipanalangin mo kami, Reyna ng kasantusantuhang Rosaryo..  
+<strong>R.</strong> Nang kami'y maging dapat makinabang ng mga pangako ni Hesukristo.`,
 
-  closingPrayer: `Manalangin tayo:  
-O Diyos, na sa pamamagitan ng buhay, pagkamatay, at muling pagkabuhay ng Iyong Bugtong na Anak,  
-ay ipinagkaloob Mo sa amin ang gantimpala ng buhay na walang hanggan;  
-ipagkaloob Mo, isinasamo namin,  
-na sa pagninilay namin sa mga Misteryo ng Banal na Rosaryo  
-ng Mahal na Birheng Maria,  
-ay maisabuhay namin ang mga nilalaman nito  
-at matamo ang mga ipinangako nito.  
-Sa pamamagitan ni Hesukristo, aming Panginoon. Amen.`
+  closingPrayer: `Manalangin tayo:
+Diyos at Panginoon namin, na ang bugtong na Anak Mo ay siyang ipinapagkamit namin ng kagalinga't kabuhayang walang hanggan sa pamamagitan ng kanyang pagkakatawang-tao, pagkamatay at pagkabuhya mag-uli, ipagkaloob Mo, hinihiling namin sa Iyo, na sa pagninilay-nilay namin nitiong mga misteryo ng Santo Rosaryo ni Santa Mariang Birhen ay hindi lamang matularan namin ang mga magagaling na halimbawang nalalarawan sa amin; kundi naman makamtan namin ang mga kagalingang ipinangako sa amin; alang-alang kay Hesukristo Panginoon namin; na kapisan Mo at ng Espiritu Santo nabubuhay at naghahari magpasawalang hanggan. Siya nawa. Amen.`
   },
 la: {
   signOfTheCross: `In nómine Patris, et Fílii, et Spíritus Sancti. Amen.`,
@@ -395,14 +377,14 @@ const titles = {
   },
   tl: {
     signOfTheCross: "Tanda ng Krus",
-    apostlesCreed: "Sumasampalataya Ako",
-    ourFather: "Ama Namin",
+    apostlesCreed: "Kredo ng Apostoles",
+    ourFather: " Ama Namin, Sumasa-langit Ka",
     threeHailMarys: "3 Aba Ginoong Maria (Pananampalataya, Pag-asa, at Pag-ibig)",
     gloryBe: "Luwalhati sa Ama",
     mystery: "Misteryo",
     tenHailMarys: "Sampung Aba Ginoong Maria",
-    fatimaPrayer: "Dasal ng Fatima",
-    hailHolyQueen: "Aba Po, Santa Mariang Hari",
+    fatimaPrayer: "Panalangin ng Fatima",
+    hailHolyQueen: "Aba Po Santa Mariang Hari",
     closingDialogue: "Panalangin sa Wakas",
     closingPrayer: "Pangwakas na Panalangin",
   },
