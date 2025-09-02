@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>blazexnz App Directory</title>
+<style>
+    body, ul, li {
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background: #f5f7fa;
+        color: #333;
+    }
+
+    h1 {
+        text-align: center;
+        margin: 30px 0 15px;
+        color: #2c3e50;
+        font-size: 2rem;
+    }
+
+    /* Tag bar */
+    .tag-bar {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px;
+        margin: 40px 0 25px;
+    }
+
+    .tag-btn {
+        padding: 6px 14px;
+        border-radius: 20px;
+        border: 1px solid #ccc;
+        background: #fff;
+        cursor: pointer;
+        font-size: 0.85rem;
+        transition: all 0.2s;
+    }
+
+    .tag-btn.active {
+        background: #2c3e50;
+        color: #fff;
+        border-color: #2c3e50;
+    }
+
+    .container {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 0 10px;
+    }
+
+    ul.app-list {
+        list-style: none;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
+        gap: 20px;
+        justify-items: center;
+        align-items: start;
+        text-align: center;
+    }
+
+    li {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .app-card {
+        width: 60px;
+        height: 60px;
+        border-radius: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #fff;
+        box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+        transition: transform 0.2s, box-shadow 0.2s;
+        cursor: pointer;
+        font-size: 2rem;
+        margin-bottom: 6px;
+    }
+
+    .app-card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 6px 15px rgba(0,0,0,0.12);
+    }
+
+    .app-name {
+        font-size: 0.8rem;
+        font-weight: 600;
+    }
+
+    .release-date {
+        font-size: 0.65rem;
+        color: #7f8c8d;
+    }
+
+    /* Section separator */
+    .section {
+        margin-top: 50px;
+    }
+
+    .hidden {
+        display: none !important;
+    }
+</style>
+</head>
+<body>
+<h1>blazexnz Apps</h1>
+
+<div class="container">
+    <ul class="app-list">
+        <li data-tags="faith">
+            <div class="app-card" onclick="window.open('./rosary/', '_blank')">📿</div>
+            <div class="app-name">Rosary</div>
+            <div class="release-date">Aug 2025</div>
+        </li>
+        <li data-tags="games">
+            <div class="app-card" onclick="window.open('./kids-math/', '_blank')">🧒</div>
+            <div class="app-name">Kids Math</div>
+            <div class="release-date">Aug 2025</div>
+        </li>
+        <!-- Add new cards above this. Test card below. -->
+        <li data-tags="test">
+            <div class="app-card" onclick="window.open('./test/', '_blank')">🧪</div>
+            <div class="app-name">Test repo</div>
+            <div class="release-date">Now</div>
+        </li>
+    </ul>
+
+<!-- TAG BAR -->
+<div class="tag-bar">
+    <button class="tag-btn active" data-filter="all">All</button>
+    <button class="tag-btn" data-filter="memory">Faith</button>
+    <button class="tag-btn" data-filter="brain">Games</button>
+  <button class="tag-btn" data-filter="brain">Test</button>
+</div>
+
+    <!-- Footer Links as Separate Tile Section -->
+    <div class="section">
+        <ul class="app-list">
+            <li>
+                <div class="app-card" onclick="window.open('https://github.com/codarionis/codarionis.github.io/tree/main', '_blank')">📂</div>
+                <div class="app-name">codarionis Repo</div>
+            </li>
+            <li>
+                <div class="app-card" onclick="window.open('https://codarionis.github.io', '_blank')">🏠</div>
+                <div class="app-name">codarionis Home</div>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<script>
+    const buttons = document.querySelectorAll(".tag-btn");
+    const cards = document.querySelectorAll(".app-list li");
+
+    buttons.forEach(btn => {
+        btn.addEventListener("click", () => {
+            buttons.forEach(b => b.classList.remove("active"));
+            btn.classList.add("active");
+
+            const filter = btn.getAttribute("data-filter");
+            
+            cards.forEach(card => {
+                if (filter === "all" || card.dataset.tags.includes(filter)) {
+                    card.classList.remove("hidden");
+                } else {
+                    card.classList.add("hidden");
+                }
+            });
+        });
+    });
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
