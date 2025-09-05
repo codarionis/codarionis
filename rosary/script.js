@@ -63,7 +63,7 @@ through the same Christ our Lord. Amen.`,
 
 //New prayers added for the deceased mode
   forDeceasedIntention: `<strong>V.</strong> Let us offer this Holy Rosary for the eternal rest of (name).<br>
-<strong>R.</strong> Tay the Lord guide our thoughts, bless our words, and fill our hearts.`,
+<strong>R.</strong> May the Lord guide our thoughts, bless our words, and fill our hearts.`,
 
   prayerForTheFaithfulDeparted: `<strong>V.</strong> Eternal rest grant unto (him/her), O Lord.<br>
 <strong>R.</strong> And let perpetual light shine upon (him/her).<br>
@@ -1566,3 +1566,4 @@ toggleBeadsBtn.addEventListener("click", () => {
   const beadsVisible = prayersDiv.classList.toggle("hide-beads");
   toggleBeadsBtn.textContent = beadsVisible ? "Show Beads" : "Hide Beads";
 });
+
