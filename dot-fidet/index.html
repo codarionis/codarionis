@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dot Fidget</title>
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background: #f0f0f0;
+      padding: 20px;
+      min-height: 100vh;
+      box-sizing: border-box;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+      color: black;
+      user-select: none;
+    }
+
+    .controls {
+      margin-bottom: 15px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 10px;
+      max-width: 600px;
+      justify-content: center; /* Changed from flex-start to center */
+    }
+
+    /* Keep selects and labels on first line */
+    .controls > label,
+    .controls > select {
+      margin-left: 5px;
+    }
+
+    /* Reset + color picker container on same line */
+    .reset-color-container {
+      width: 100%;
+      margin-top: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+    }
+
+    button,
+    select,
+    input[type="color"] {
+      padding: 5px 10px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    #resetBtn {
+      margin-left: 0;
+      min-width: 80px;
+      min-height: 32px;
+      border-radius: 6px;
+      border: 2px solid #ccc;
+      background: white;
+      transition: background 0.2s, border-color 0.2s;
+    }
+    #resetBtn:hover {
+      background: #e0e0e0;
+    }
+
+    .position-controls {
+      margin-bottom: 15px;
+      user-select: none;
+    }
+
+    .position-controls button {
+      margin-right: 10px;
+      border: 2px solid #ccc;
+      background: white;
+      border-radius: 6px;
+      transition: background 0.2s, border-color 0.2s;
+      min-width: 60px;
+      min-height: 32px;
+      cursor: pointer;
+    }
+
+    .position-controls button.active {
+      background: #4CAF50;
+      color: white;
+      border-color: #4CAF50;
+    }
+
+    .grid-container {
+      display: grid;
+      gap: 5px;
+      padding: 15px;
+      background: white;
+      border: 3px solid #ccc;
+      border-radius: 15px;
+      position: relative;
+      width: auto;
+      height: auto;
+      justify-content: start;
+      margin-top: auto;
+    }
+
+    .position-top {
+      margin-top: 0;
+      margin-bottom: auto;
+    }
+
+    .position-middle {
+      margin-top: auto;
+      margin-bottom: auto;
+    }
+
+    .position-bottom {
+      margin-top: auto;
+      margin-bottom: 40px;
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding-bottom: 70px;
+      }
+
+      button,
+      select,
+      input[type="color"] {
+        font-size: 18px !important;
+        padding: 10px 16px !important;
+        margin-left: 8px !important;
+      }
+
+      .position-controls button {
+        min-width: 80px;
+        min-height: 44px;
+        margin-right: 14px;
+        font-size: 18px;
+      }
+
+      .grid-container {
+        width: 90vw;
+        max-width: 400px;
+      }
+    }
+
+    .dot {
+      width: 25px;
+      height: 25px;
+      background: white;
+      border: 2px solid #ccc;
+      cursor: pointer;
+      transition: background 0.2s ease;
+      box-sizing: border-box;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .dot.circle {
+      border-radius: 50%;
+      position: absolute;
+      transition: background 0.2s ease;
+      -webkit-transform: translate3d(0, 0, 0);
+      will-change: transform;
+      width: 25px;
+      height: 25px;
+    }
+
+    .dot.square {
+      border-radius: 8px;
+      position: static;
+    }
+  </style>
+</head>
+<body>
+  <h1>Dot Fidget</h1>
+
+  <div class="controls" aria-label="Controls">
+    <label for="shapeType">Shape:</label>
+    <select id="shapeType">
+      <option value="square" selected>Square</option>
+      <option value="circle">Circle</option>
+    </select>
+
+    <label for="circleSize" id="circleSizeLabel" style="display:none; margin-left: 10px;">Size:</label>
+    <select id="circleSize" style="display:none; margin-left: 5px;">
+      <option value="3">3 rings (about 30 dots)</option>
+      <option value="5" selected>5 rings (about 75 dots)</option>
+      <option value="8">8 rings (about 150 dots)</option>
+      <option value="10">10 rings (about 200 dots)</option>
+    </select>
+
+    <label for="gridSize" id="gridSizeLabel" style="margin-left: 10px;">Size:</label>
+    <select id="gridSize" style="margin-left: 5px;">
+      <option value="5" selected>5 x 5</option>
+      <option value="8">8 x 8</option>
+      <option value="10">10 x 10</option>
+      <option value="15">15 x 15</option>
+    </select>
+
+    <div class="reset-color-container">
+      <label for="colorPicker" style="margin: 0;">Color:</label>
+      <input type="color" id="colorPicker" value="#008000" title="Select dot color" />
+      <button id="resetBtn">Reset</button>
+    </div>
+  </div>
+
+  <div class="position-controls" aria-label="Select grid vertical position">
+    <button type="button" id="posTop">Top</button>
+    <button type="button" id="posMiddle">Middle</button>
+    <button type="button" id="posBottom" class="active">Bottom</button>
+  </div>
+
+  <div id="gridContainer" class="grid-container position-bottom"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+
