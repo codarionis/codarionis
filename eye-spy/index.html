@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>I Spy with My Little Eye</title>
+  <style>
+    /* Reset */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #FFDEE9, #B5FFFC);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      min-height: 100vh;
+      padding: 20px;
+      touch-action: manipulation; /* prevent double tap zoom */
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      color: #FF4F79;
+      text-align: center;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px #FFF;
+    }
+
+    #game-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+      gap: 15px;
+      width: 100%;
+      max-width: 500px;
+    }
+
+    .emoji-btn {
+      font-size: 2rem;
+      padding: 20px;
+      border-radius: 15px;
+      border: none;
+      cursor: pointer;
+      background: #FFD93D;
+      transition: transform 0.1s, background 0.2s;
+      user-select: none;
+    }
+
+    .emoji-btn:active {
+      transform: scale(0.9);
+      background: #FF6F61;
+    }
+
+    .emoji-btn.disabled {
+      background: #C0C0C0;
+      cursor: not-allowed;
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+      .emoji-btn:hover:not(.disabled) {
+        background: #FF9A76;
+        transform: scale(1.1);
+      }
+    }
+
+    #message {
+      margin-top: 25px;
+      font-size: 1.5rem;
+      color: #4B0082;
+      text-align: center;
+      min-height: 40px;
+    }
+
+    button#new-round, button#hint-btn {
+      margin-top: 15px;
+      padding: 15px 30px;
+      font-size: 1.2rem;
+      border: none;
+      border-radius: 10px;
+      background: #6A5ACD;
+      color: white;
+      cursor: pointer;
+      transition: transform 0.1s, background 0.2s;
+    }
+
+    button#new-round:active, button#hint-btn:active {
+      transform: scale(0.95);
+      background: #483D8B;
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+      button#new-round:hover, button#hint-btn:hover {
+        background: #7B68EE;
+      }
+    }
+
+    /* Confetti overlay */
+    #confetti-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      display: none;
+      z-index: 9999;
+    }
+  </style>
+</head>
+<body>
+  <h1>I Spy with My Little Eye 👀</h1>
+
+  <div id="game-container"></div>
+  <div id="message"></div>
+  <button id="hint-btn">Hint 💡</button>
+  <button id="new-round">New Round 🔄</button>
+
+  <canvas id="confetti-overlay"></canvas>
+  <script src="script.js"></script>
+</body>
+</html>
