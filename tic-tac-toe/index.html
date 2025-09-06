@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tic Tac Toe</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 30px;
+      background: #f0f0f0;
+      min-height: 100vh;
+      margin: 0;
+    }
+
+    .menu {
+      margin-bottom: 20px;
+      display: flex;
+      gap: 30px;
+    }
+
+    .menu button {
+      background-color: #0074d9;
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 14px;
+      transition: background-color 0.3s ease;
+      min-width: 110px;
+      box-sizing: border-box;
+      text-align: center;
+    }
+
+    .menu button:hover {
+      background-color: #005fa3;
+    }
+
+    .scoreboard {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin-bottom: 20px;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .scoreboard span {
+      padding: 8px 16px;
+      background: white;
+      border-radius: 6px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.2);
+      min-width: 110px;
+      text-align: center;
+      box-sizing: border-box;
+      display: inline-block;
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    /* Highlight for current player */
+    .scoreboard span.active {
+      background-color: var(--active-highlight-color);
+      box-shadow: 0 0 12px var(--active-highlight-color);
+      color: white;
+    }
+
+    .board {
+      display: grid;
+      grid-template-columns: repeat(3, 75px);
+      grid-template-rows: repeat(3, 75px);
+      gap: 20px;
+    }
+
+    .dot {
+      width: 75px;
+      height: 75px;
+      border-radius: 50%;
+      background-color: #ccc;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+    }
+
+    .dot.player1 {
+      background-color: var(--player1-color);
+      box-shadow: 0 0 8px var(--player1-color);
+    }
+
+    .dot.player2 {
+      background-color: var(--player2-color);
+      box-shadow: 0 0 8px var(--player2-color);
+    }
+
+    .modal {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-color: rgba(0,0,0,0.4);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 100;
+    }
+
+    .modal.hidden {
+      display: none;
+    }
+
+    .modal-content {
+      background: white;
+      padding: 20px 30px;
+      border-radius: 8px;
+      width: 300px;
+      text-align: center;
+    }
+
+    .modal-content label {
+      display: block;
+      margin-bottom: 15px;
+      font-size: 16px;
+    }
+
+    .modal-content input[type=color] {
+      margin-left: 10px;
+      vertical-align: middle;
+      cursor: pointer;
+    }
+
+    .modal-buttons {
+      margin-top: 20px;
+      display: flex;
+      justify-content: space-around;
+    }
+
+    .modal-buttons button {
+      padding: 8px 16px;
+      border-radius: 4px;
+      border: none;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    #saveColorsBtn {
+      background-color: #2ecc40;
+      color: white;
+    }
+
+    #cancelColorsBtn {
+      background-color: #ff4136;
+      color: white;
+    }
+
+    #winnerOverlay {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.7);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      z-index: 200;
+      color: white;
+      font-size: 2rem;
+      font-weight: bold;
+      text-align: center;
+      opacity: 1;
+      transition: opacity 0.5s ease;
+      pointer-events: none;
+    }
+
+    #winnerOverlay.hidden {
+      display: none;
+    }
+
+    #winnerOverlay.fade-out {
+      opacity: 0;
+    }
+
+    #fireworksCanvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 199;
+    }
+
+    #playAgainBtn {
+      margin-top: 20px;
+      padding: 10px 24px;
+      font-size: 16px;
+      border: none;
+      border-radius: 6px;
+      background-color: #2ecc40;
+      color: white;
+      cursor: pointer;
+      display: none;
+      transition: background-color 0.3s ease;
+      width: calc(3 * 75px + 2 * 20px);
+      box-sizing: border-box;
+    }
+    #playAgainBtn:hover {
+      background-color: #27ae35;
+    }
+  </style>
+</head>
+<body>
+  <div class="menu">
+    <button id="undoBtn">Undo</button>
+    <button id="colorBtn">Colour</button>
+  </div>
+
+  <div class="scoreboard">
+    <span id="player1Score">Player 1: 0</span>
+    <span id="player2Score">Player 2: 0</span>
+  </div>
+
+  <div id="board" class="board"></div>
+
+  <button id="playAgainBtn">Play Again</button>
+
+  <div id="colorModal" class="modal hidden">
+    <div class="modal-content">
+      <h2>Change Player Colors</h2>
+      <label>
+        Player 1 Color:
+        <input type="color" id="player1ColorPicker" value="#FF4136" />
+      </label>
+      <label>
+        Player 2 Color:
+        <input type="color" id="player2ColorPicker" value="#0074D9" />
+      </label>
+      <div class="modal-buttons">
+        <button id="saveColorsBtn">Save</button>
+        <button id="cancelColorsBtn">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <canvas id="fireworksCanvas"></canvas>
+  <div id="winnerOverlay" class="hidden"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
