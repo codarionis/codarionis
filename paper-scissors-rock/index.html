@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+<title>Paper Scissors Rock - Two Player</title>
+<style>
+  /* Basic mobile-friendly styling */
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+      Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    margin: 0;
+    padding: 20px;
+    background: #f2f2f7;
+    color: #222;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+  }
+
+  h1 {
+    margin-bottom: 10px;
+  }
+
+  #scoreboard {
+    max-width: 400px;
+    width: 100%;
+    margin: 0 auto 20px;
+    font-size: 18px;
+    text-align: center;
+    font-weight: 600;
+    background: #e6f0ff;
+    border-radius: 12px;
+    padding: 10px 0;
+  }
+
+  #game {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+    width: 100%;
+    max-width: 400px;
+    box-sizing: border-box;
+  }
+
+  .player-section {
+    margin-bottom: 20px;
+  }
+
+  .player-section h2 {
+    margin-bottom: 10px;
+  }
+
+  .choices {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  button.choice-btn {
+    flex: 1;
+    margin: 0 5px;
+    padding: 15px 0;
+    font-size: 18px;
+    border-radius: 10px;
+    border: 2px solid #007aff;
+    background-color: #e6f0ff;
+    color: #007aff;
+    transition: background-color 0.2s ease;
+    user-select: none;
+
+    /* Added for iOS Safari touch support */
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+
+    /* Fix for iOS Safari to ensure taps register */
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+  }
+
+  button.choice-btn:active {
+    background-color: #007aff;
+    color: white;
+  }
+
+  button.choice-btn[disabled] {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+
+  #result {
+    font-size: 22px;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 20px;
+    min-height: 32px;
+  }
+
+  #reveal-btn {
+    display: none;
+    margin-bottom: 15px;
+    width: 100%;
+    padding: 12px 0;
+    font-size: 18px;
+    border-radius: 12px;
+    background-color: #34c759;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+
+  #reveal-btn:hover {
+    background-color: #28a745;
+  }
+
+  #reset-btn {
+    display: none;
+    background-color: #007aff;
+    color: white;
+    border: none;
+    padding: 12px 0;
+    width: 100%;
+    border-radius: 12px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+
+  #reset-btn:hover {
+    background-color: #005bb5;
+  }
+
+  /* Winner overlay */
+  #winnerOverlay {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 200;
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    opacity: 1;
+    transition: opacity 0.5s ease;
+    pointer-events: none;
+  }
+
+  #winnerOverlay.hidden {
+    display: none;
+  }
+
+  #winnerOverlay.fade-out {
+    opacity: 0;
+  }
+
+  /* Fireworks canvas */
+  #fireworksCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 199;
+  }
+
+  /* New hammer down animation for countdown */
+  @keyframes hammerDown {
+    0% {
+      transform: scale(1) translateY(0);
+    }
+    50% {
+      transform: scale(0.8) translateY(10px);
+    }
+    100% {
+      transform: scale(1) translateY(0);
+    }
+  }
+
+  .countdown-step.hammer {
+    display: inline-block;
+    animation: hammerDown 400ms ease forwards;
+  }
+</style>
+</head>
+<body>
+
+  <h1>Paper Scissors Rock</h1>
+
+  <div id="scoreboard">
+    <span>Player 1 Wins: <span id="score-p1">0</span></span> &nbsp;|&nbsp;
+    <span>Ties: <span id="score-tie">0</span></span> &nbsp;|&nbsp;
+    <span>Player 2 Wins: <span id="score-p2">0</span></span>
+  </div>
+
+  <div id="game">
+    <div id="result"></div>
+
+    <div id="player1" class="player-section">
+      <h2>Player 1: Choose</h2>
+      <div class="choices">
+        <button class="choice-btn" data-player="1" data-choice="paper">✋</button>
+        <button class="choice-btn" data-player="1" data-choice="scissors">✌️</button>
+        <button class="choice-btn" data-player="1" data-choice="rock">✊</button>
+      </div>
+    </div>
+
+    <div id="player2" class="player-section" style="display:none;">
+      <h2>Player 2: Choose</h2>
+      <div class="choices">
+        <button class="choice-btn" data-player="2" data-choice="paper">✋</button>
+        <button class="choice-btn" data-player="2" data-choice="scissors">✌️</button>
+        <button class="choice-btn" data-player="2" data-choice="rock">✊</button>
+      </div>
+    </div>
+
+    <button id="reveal-btn">Reveal Winner</button>
+    <button id="reset-btn">Play Again</button>
+  </div>
+
+  <canvas id="fireworksCanvas"></canvas>
+  <div id="winnerOverlay" class="hidden"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
+
+
+
